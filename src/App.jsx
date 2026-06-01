@@ -9,7 +9,10 @@ import {
 } from "lucide-react"
 import { useId, useState } from "react"
 
-const imagePath = (name) => `${import.meta.env.BASE_URL}images/${name}`
+const imagePath = (name) =>
+  import.meta.env.PROD
+    ? `https://breezelife.github.io/Project-MiniSophia/images/${name}`
+    : `/images/${name}`
 
 const privilegeCards = [
   {
