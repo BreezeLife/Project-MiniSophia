@@ -9,12 +9,14 @@ import {
 } from "lucide-react"
 import { useId, useState } from "react"
 
+const imagePath = (name) => `${import.meta.env.BASE_URL}images/${name}`
+
 const privilegeCards = [
   {
     id: "tiny-willful",
     title: "任性一次券",
     label: "今天可以任性一次",
-    image: "/images/childrens-day-note.jpg",
+    image: imagePath("childrens-day-note.jpg"),
     accent: "from-sunshine/85 via-tangerine/35 to-white",
     mark: "01",
   },
@@ -22,7 +24,7 @@ const privilegeCards = [
     id: "no-reason",
     title: "不讲道理券",
     label: "今天可以不讲道理一次",
-    image: "/images/sushi-portrait.jpg",
+    image: imagePath("sushi-portrait.jpg"),
     accent: "from-sky/65 via-white to-blush/45",
     mark: "02",
   },
@@ -30,7 +32,7 @@ const privilegeCards = [
     id: "hug",
     title: "点名抱抱券",
     label: "今天可以点名要抱抱一次",
-    image: "/images/dinner-together.jpg",
+    image: imagePath("dinner-together.jpg"),
     accent: "from-blush/80 via-white to-berry/20",
     mark: "03",
   },
@@ -38,7 +40,7 @@ const privilegeCards = [
     id: "pause-work",
     title: "十分钟放空券",
     label: "今天可以把工作先放一边 10 分钟",
-    image: "/images/memory-warm.jpg",
+    image: imagePath("memory-warm.jpg"),
     accent: "from-mint/65 via-white to-sky/35",
     mark: "04",
   },
@@ -46,7 +48,7 @@ const privilegeCards = [
     id: "favorite",
     title: "无条件偏爱券",
     label: "今天可以被我无条件偏爱",
-    image: "/images/kitchen-together.jpg",
+    image: imagePath("kitchen-together.jpg"),
     accent: "from-berry/40 via-white to-sunshine/55",
     mark: "05",
   },
@@ -154,7 +156,7 @@ function PasswordGate({ onUnlock }) {
       <FloatingMarks />
       <section className="password-panel relative mx-auto flex min-h-[calc(100svh-4rem)] max-w-5xl items-center overflow-hidden rounded-[8px] border border-white/80 bg-white/[0.68] shadow-soft backdrop-blur">
         <img
-          src="/images/childrens-day-note.jpg"
+          src={imagePath("childrens-day-note.jpg")}
           alt=""
           className="password-photo absolute inset-0 h-full w-full object-cover opacity-[0.18]"
         />
@@ -257,7 +259,7 @@ function App() {
 
       <section className="relative isolate flex min-h-[94svh] items-end overflow-hidden px-5 pb-12 pt-8 sm:min-h-screen sm:items-center sm:px-10 lg:px-16">
         <img
-          src="/images/sushi-portrait.jpg"
+          src={imagePath("sushi-portrait.jpg")}
           alt=""
           className="absolute inset-0 h-full w-full object-cover object-[46%_26%] opacity-45 sm:opacity-35"
         />
@@ -309,7 +311,7 @@ function App() {
 
           <figure className="photo-frame overflow-hidden rounded-[8px] border border-white/80 bg-white/35 shadow-soft">
             <img
-              src="/images/kitchen-together.jpg"
+              src={imagePath("kitchen-together.jpg")}
               alt="一起在厨房的合照"
               className="aspect-[4/5] h-full w-full object-cover object-[36%_50%] md:aspect-[3/4]"
             />
@@ -485,7 +487,7 @@ function App() {
 
           <figure className="final-photo-card overflow-hidden rounded-[8px] border border-white/80 bg-white/[0.55] p-2 shadow-soft backdrop-blur">
             <img
-              src="/images/childrens-day-note.jpg"
+              src={imagePath("childrens-day-note.jpg")}
               alt="儿童节快乐的留言和小摆件"
               className="h-[31rem] w-full rounded-[6px] object-cover object-[50%_42%] sm:h-[38rem] md:h-[34rem]"
             />
@@ -497,17 +499,17 @@ function App() {
 
         <div className="mx-auto mt-12 grid max-w-5xl gap-3 sm:grid-cols-3">
           <img
-            src="/images/memory-warm.jpg"
+            src={imagePath("memory-warm.jpg")}
             alt="夜晚花旁的她"
             className="memory-tile h-44 w-full rounded-[8px] object-cover object-[48%_42%] shadow-soft sm:h-56"
           />
           <img
-            src="/images/dinner-together.jpg"
+            src={imagePath("dinner-together.jpg")}
             alt="一起吃饭的合照"
             className="memory-tile h-44 w-full rounded-[8px] object-cover object-[38%_48%] shadow-soft sm:h-56"
           />
           <img
-            src="/images/kitchen-solo.jpg"
+            src={imagePath("kitchen-solo.jpg")}
             alt="她在厨房做饭"
             className="memory-tile h-44 w-full rounded-[8px] object-cover object-[28%_48%] shadow-soft sm:h-56"
           />
