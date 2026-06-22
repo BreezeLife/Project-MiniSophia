@@ -161,6 +161,8 @@ function PasswordGate({ onUnlock }) {
         <img
           src={imagePath("childrens-day-note.jpg")}
           alt=""
+          decoding="async"
+          fetchPriority="high"
           className="password-photo absolute inset-0 h-full w-full object-cover opacity-[0.18]"
         />
         <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(255,253,251,0.94),rgba(255,248,242,0.82),rgba(255,255,255,0.72))]" />
@@ -264,6 +266,8 @@ function App() {
         <img
           src={imagePath("sushi-portrait.jpg")}
           alt=""
+          decoding="async"
+          fetchPriority="high"
           className="absolute inset-0 h-full w-full object-cover object-[46%_26%] opacity-45 sm:opacity-35"
         />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(255,211,106,0.38),transparent_30%),radial-gradient(circle_at_82%_22%,rgba(120,200,223,0.25),transparent_26%),linear-gradient(180deg,rgba(255,253,251,0.58)_0%,rgba(255,248,242,0.76)_45%,rgba(255,248,242,0.96)_100%)]" />
@@ -316,6 +320,8 @@ function App() {
             <img
               src={imagePath("kitchen-together.jpg")}
               alt="一起在厨房的合照"
+              loading="lazy"
+              decoding="async"
               className="aspect-[4/5] h-full w-full object-cover object-[36%_50%] md:aspect-[3/4]"
             />
           </figure>
@@ -363,7 +369,13 @@ function App() {
                       <SophiaLogo compact />
                       <span>{drawnCard.mark}/05</span>
                     </div>
-                    <img src={drawnCard.image} alt="" className="mt-4 h-52 w-full object-cover" />
+                    <img
+                      src={drawnCard.image}
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                      className="mt-4 h-52 w-full object-cover"
+                    />
                     <div className="space-y-3 p-5">
                       <p className="text-sm font-semibold text-tangerine">
                         {drawCount === 1 ? "抽到了这张" : "又抽到了这张"}
@@ -492,6 +504,8 @@ function App() {
             <img
               src={imagePath("childrens-day-note.jpg")}
               alt="儿童节快乐的留言和小摆件"
+              loading="lazy"
+              decoding="async"
               className="h-[31rem] w-full rounded-[6px] object-cover object-[50%_42%] sm:h-[38rem] md:h-[34rem]"
             />
             <figcaption className="px-3 py-4 text-base font-semibold text-cocoa">
@@ -504,16 +518,22 @@ function App() {
           <img
             src={imagePath("memory-warm.jpg")}
             alt="夜晚花旁的她"
+            loading="lazy"
+            decoding="async"
             className="memory-tile h-44 w-full rounded-[8px] object-cover object-[48%_42%] shadow-soft sm:h-56"
           />
           <img
             src={imagePath("dinner-together.jpg")}
             alt="一起吃饭的合照"
+            loading="lazy"
+            decoding="async"
             className="memory-tile h-44 w-full rounded-[8px] object-cover object-[38%_48%] shadow-soft sm:h-56"
           />
           <img
             src={imagePath("kitchen-solo.jpg")}
             alt="她在厨房做饭"
+            loading="lazy"
+            decoding="async"
             className="memory-tile h-44 w-full rounded-[8px] object-cover object-[28%_48%] shadow-soft sm:h-56"
           />
         </div>
